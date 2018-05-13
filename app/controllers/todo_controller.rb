@@ -1,10 +1,6 @@
 class TodoController < ApplicationController
     def index 
-        id = 2
-        if id == '1'
-            @todo_description = "Make the curriculum"
-            @todo_pomodoro_estimate = 2
-        end
+    @todos = Todo.all 
     end
     def show
         # Get the number the user typed in the URL
