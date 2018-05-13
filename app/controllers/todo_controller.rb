@@ -18,9 +18,9 @@ class TodoController < ApplicationController
     def create
         t=Todo.new
         t.description = params['new_todo']
-        t.pomodoro_estimate =params ['number_of_pomodoros']
+        t.pomodoro_estimate =params['number_of_pomodoros']
         t.save
-        redirect_to"/todo/show/" + t.id 
+        redirect_to"/todo/show/#{t.id}" 
     end
 end
 

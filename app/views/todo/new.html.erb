@@ -1,10 +1,10 @@
 <h2>Add a new todo!</h2>
 <div id="new-todo-block">
-    <form method="post" action = "todo/new">
+    <form method="post" action = "/todo/new">
     <input type = "text" name = "new_todo" placeholder="What's your to-do for today?"/>
     <input type = "number" name = "number_of_pomodoros" placeholder="What's your pomodoro estimate?"/>
     <input id="add-new-todo-item" type="submit" placeholder="add to-do"/>
-    <input type="hidden" value= "<%= form_authenticity_token() %>" name=authenticity_token()" />
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token%>
     </form>
     <a href="/todo/index" class="simple-link">Go back...</a>
 </div>
