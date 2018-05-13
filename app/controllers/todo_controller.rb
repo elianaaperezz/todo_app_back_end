@@ -11,13 +11,20 @@ class TodoController < ApplicationController
         todo_id = params[:id]
         
         # Grab the todo with that id from the datatbase
-            todo = Todo.find_by_id(todo_id)
-            
-            # Set the variables shared with template to the values we got  
-            #from the database
-            @todo_description = todo.description
-            @todo_pomodoro_estimate = todo.pomodoro_estimate
-        
+        @todo = Todo.find_by_id(todo_id)
+    end
+    def new
+    end
+    def create
+        t=Todo.new
+        t.description = params['new_todo']
+        t.pomodoro_estimate =params ['number_of_pomodoros']
+        t.save
+        redirect_to"/todo/show/" + t.id 
     end
 end
+
+
+    
+        
 
